@@ -116,6 +116,9 @@ on boot
 # e.g. rmnet_hsic[,rmnet_hsusb]
 # Only required for transport type hsic, optional for other transport types.
 
+on fs
+    setprop sys.usb.ffs.aio_compat 1
+
 # USB compositions
 on property:sys.usb.config=diag,serial_tty,serial_smd && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
