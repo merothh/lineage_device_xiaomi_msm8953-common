@@ -24,15 +24,16 @@
    OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
-#include <fcntl.h>
 #include <stdlib.h>
 #include <sys/sysinfo.h>
 
-#include "vendor_init.h"
+#include <android-base/properties.h>
+
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
+#include "vendor_init.h"
+
+using android::base::GetProperty;
+using android::init::property_set;
 
 char const *heapgrowthlimit;
 char const *heapminfree;
